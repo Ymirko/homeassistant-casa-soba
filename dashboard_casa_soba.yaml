@@ -1,0 +1,665 @@
+views:
+  - title: Dashboard
+    icon: mdi:home
+    path: dashboard
+    theme: clear
+    cards:
+      - type: custom:button-card
+        theme: Mushroom Shadow
+        styles:
+          card:
+            - background: transparent
+            - border: none
+            - box-shadow: none
+            - padding: 10px 0 20px 0
+        name: |
+          <div style="
+            font-size: 2.2em;
+            font-weight: 800;
+            text-align: center;
+            background: linear-gradient(90deg, #FF6B8B, #FF8E53);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin: 0 0 5px 0;
+          ">¡Hola, Erica!</div>
+          <div style="
+            text-align: center;
+            font-size: 1.1em;
+            color: #666;
+            font-weight: 500;
+          ">Bienvenida a tu casa inteligente</div>
+        show_icon: false
+        show_name: true
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            theme: Mushroom Shadow
+            name: Luces
+            icon: mdi:lightbulb-group
+            styles:
+              card:
+                - background: >-
+                    linear-gradient(135deg, rgba(255,165,0,0.3),
+                    rgba(255,165,0,0.6))
+                - border-radius: 16px
+                - padding: 20px
+                - border: 2px solid rgba(255, 165, 0, 0.6)
+                - box-shadow: 0 6px 16px rgba(255, 165, 0, 0.3)
+              name:
+                - color: '#212121'
+                - font-size: 1.2em
+                - font-weight: 700
+                - text-align: center
+                - margin-bottom: 10px
+              icon:
+                - color: '#212121'
+                - width: 36px
+                - height: 36px
+                - margin: 0 auto
+                - display: block
+            tap_action:
+              action: navigate
+              navigation_path: luces
+          - type: custom:button-card
+            theme: Mushroom Shadow
+            name: Seguridad
+            icon: mdi:shield-home
+            styles:
+              card:
+                - background: >-
+                    linear-gradient(135deg, rgba(91,134,229,0.3),
+                    rgba(91,134,229,0.6))
+                - border-radius: 16px
+                - padding: 20px
+                - border: 2px solid rgba(91, 134, 229, 0.6)
+                - box-shadow: 0 6px 16px rgba(91, 134, 229, 0.3)
+              name:
+                - color: '#1A237E'
+                - font-size: 1.2em
+                - font-weight: 700
+                - text-align: center
+                - margin-bottom: 10px
+              icon:
+                - color: '#1A237E'
+                - width: 36px
+                - height: 36px
+                - margin: 0 auto
+                - display: block
+            tap_action:
+              action: navigate
+              navigation_path: seguridad
+          - type: custom:button-card
+            theme: Mushroom Shadow
+            name: Spotify
+            icon: mdi:spotify
+            styles:
+              card:
+                - background: >-
+                    linear-gradient(135deg, rgba(29,185,84,0.3),
+                    rgba(29,185,84,0.6))
+                - border-radius: 16px
+                - padding: 20px
+                - border: 2px solid rgba(29, 185, 84, 0.6)
+                - box-shadow: 0 6px 16px rgba(29, 185, 84, 0.3)
+              name:
+                - color: '#0D3B1E'
+                - font-size: 1.2em
+                - font-weight: 700
+                - text-align: center
+                - margin-bottom: 10px
+              icon:
+                - color: '#0D3B1E'
+                - width: 36px
+                - height: 36px
+                - margin: 0 auto
+                - display: block
+            tap_action:
+              action: call-service
+              service: media_player.select_source
+              target:
+                entity_id: media_player.spotify_erica
+              data:
+                source: Tu lista
+          - type: custom:button-card
+            theme: Mushroom Shadow
+            name: Red
+            icon: mdi:wifi
+            styles:
+              card:
+                - background: >-
+                    linear-gradient(135deg, rgba(156,39,176,0.3),
+                    rgba(156,39,176,0.6))
+                - border-radius: 16px
+                - padding: 20px
+                - border: 2px solid rgba(156, 39, 176, 0.6)
+                - box-shadow: 0 6px 16px rgba(156, 39, 176, 0.3)
+              name:
+                - color: '#311B92'
+                - font-size: 1.2em
+                - font-weight: 700
+                - text-align: center
+                - margin-bottom: 10px
+              icon:
+                - color: '#311B92'
+                - width: 36px
+                - height: 36px
+                - margin: 0 auto
+                - display: block
+            tap_action:
+              action: navigate
+              navigation_path: red
+      - type: custom:button-card
+        theme: Mushroom Shadow
+        styles:
+          card:
+            - background: transparent
+            - border: none
+            - box-shadow: none
+            - padding: 0
+            - margin: 0 0 15px 0
+        name: |
+          <div style="
+            font-size: 1.6em;
+            font-weight: 700;
+            text-align: center;
+            color: #5B86E5;
+            padding: 5px;
+          ">
+            🏠 Habitaciones
+          </div>
+        show_icon: false
+        show_name: true
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            theme: Mushroom Shadow
+            name: Salón
+            label: 22.4°C
+            icon: mdi:sofa
+            styles:
+              card:
+                - background: rgba(255, 107, 139, 0.1)
+                - border-radius: 16px
+                - padding: 18px
+                - border: 2px solid rgba(255, 107, 139, 0.3)
+                - box-shadow: 0 4px 12px rgba(255, 107, 139, 0.1)
+              name:
+                - color: null
+                - font-size: 1.2em
+                - font-weight: 700
+                - text-align: center
+                - margin-bottom: 8px
+              label:
+                - color: null
+                - font-size: 1em
+                - font-weight: 600
+                - text-align: center
+                - display: block
+              icon:
+                - color: null
+                - width: 32px
+                - height: 32px
+                - margin: 8px auto
+                - display: block
+            tap_action:
+              action: navigate
+              navigation_path: salon
+          - type: custom:button-card
+            theme: Mushroom Shadow
+            name: Dormitorio
+            label: 20.3°C
+            icon: mdi:bed
+            styles:
+              card:
+                - background: rgba(36, 209, 220, 0.1)
+                - border-radius: 16px
+                - padding: 18px
+                - border: 2px solid rgba(36, 209, 220, 0.3)
+                - box-shadow: 0 4px 12px rgba(36, 209, 220, 0.1)
+              name:
+                - color: null
+                - font-size: 1.2em
+                - font-weight: 700
+                - text-align: center
+                - margin-bottom: 8px
+              label:
+                - color: null
+                - font-size: 1em
+                - font-weight: 600
+                - text-align: center
+                - display: block
+              icon:
+                - color: null
+                - width: 32px
+                - height: 32px
+                - margin: 8px auto
+                - display: block
+            tap_action:
+              action: navigate
+              navigation_path: dormitorio
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            theme: Mushroom Shadow
+            name: Cocina
+            label: 21.7°C
+            icon: mdi:stove
+            styles:
+              card:
+                - background: rgba(255, 193, 7, 0.1)
+                - border-radius: 16px
+                - padding: 18px
+                - border: 2px solid rgba(255, 193, 7, 0.3)
+                - box-shadow: 0 4px 12px rgba(255, 193, 7, 0.1)
+              name:
+                - color: null
+                - font-size: 1.2em
+                - font-weight: 700
+                - text-align: center
+                - margin-bottom: 8px
+              label:
+                - color: null
+                - font-size: 1em
+                - font-weight: 600
+                - text-align: center
+                - display: block
+              icon:
+                - color: null
+                - width: 32px
+                - height: 32px
+                - margin: 8px auto
+                - display: block
+            tap_action:
+              action: navigate
+              navigation_path: cocina
+          - type: custom:button-card
+            theme: Mushroom Shadow
+            name: Oficina
+            label: 22.1°C
+            icon: mdi:desktop-mac
+            styles:
+              card:
+                - background: rgba(156, 39, 176, 0.1)
+                - border-radius: 16px
+                - padding: 18px
+                - border: 2px solid rgba(156, 39, 176, 0.3)
+                - box-shadow: 0 4px 12px rgba(156, 39, 176, 0.1)
+              name:
+                - color: null
+                - font-size: 1.2em
+                - font-weight: 700
+                - text-align: center
+                - margin-bottom: 8px
+              label:
+                - color: null
+                - font-size: 1em
+                - font-weight: 600
+                - text-align: center
+                - display: block
+              icon:
+                - color: null
+                - width: 32px
+                - height: 32px
+                - margin: 8px auto
+                - display: block
+            tap_action:
+              action: navigate
+              navigation_path: oficina
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            theme: Mushroom Shadow
+            name: Baño
+            label: 23.7°C
+            icon: mdi:shower
+            styles:
+              card:
+                - background: rgba(33, 150, 243, 0.1)
+                - border-radius: 16px
+                - padding: 18px
+                - border: 2px solid rgba(33, 150, 243, 0.3)
+                - box-shadow: 0 4px 12px rgba(33, 150, 243, 0.1)
+              name:
+                - color: null
+                - font-size: 1.2em
+                - font-weight: 700
+                - text-align: center
+                - margin-bottom: 8px
+              label:
+                - color: null
+                - font-size: 1em
+                - font-weight: 600
+                - text-align: center
+                - display: block
+              icon:
+                - color: null
+                - width: 32px
+                - height: 32px
+                - margin: 8px auto
+                - display: block
+            tap_action:
+              action: navigate
+              navigation_path: bano
+          - type: custom:button-card
+            theme: Mushroom Shadow
+            name: Garaje
+            label: 18.7°C
+            icon: mdi:garage
+            styles:
+              card:
+                - background: rgba(121, 85, 72, 0.1)
+                - border-radius: 16px
+                - padding: 18px
+                - border: 2px solid rgba(121, 85, 72, 0.3)
+                - box-shadow: 0 4px 12px rgba(121, 85, 72, 0.1)
+              name:
+                - color: null
+                - font-size: 1.2em
+                - font-weight: 700
+                - text-align: center
+                - margin-bottom: 8px
+              label:
+                - color: null
+                - font-size: 1em
+                - font-weight: 600
+                - text-align: center
+                - display: block
+              icon:
+                - color: null
+                - width: 32px
+                - height: 32px
+                - margin: 8px auto
+                - display: block
+            tap_action:
+              action: navigate
+              navigation_path: garaje
+      - type: custom:button-card
+        theme: Mushroom Shadow
+        styles:
+          card:
+            - background: rgba(29, 185, 84, 0.1)
+            - border-radius: 16px
+            - padding: 20px
+            - border: 2px solid rgba(29, 185, 84, 0.3)
+            - margin: 25px 10px 10px 10px
+        name: |
+          <div style="text-align: center;">
+            <div style="color: #1DB954; font-size: 1.1em; font-weight: 600; margin-bottom: 8px;">
+              🎵 Reproduciendo ahora
+            </div>
+            <div style="color: #333; font-size: 0.95em; font-weight: 500;">
+              Conecta tu Spotify para ver lo que estás escuchando
+            </div>
+          </div>
+        show_icon: false
+        show_name: true
+        tap_action:
+          action: call-service
+          service: spotcast.start
+          service_data:
+            entity_id: media_player.spotify_erica
+            uri: spotify:user:erica_playlist
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            theme: Mushroom Shadow
+            name: ''
+            icon: mdi:alarm-light
+            styles:
+              card:
+                - width: 50px
+                - height: 50px
+                - background: >-
+                    linear-gradient(135deg, rgba(255,107,139,0.3),
+                    rgba(255,107,139,0.6))
+                - border-radius: 50%
+                - border: 2px solid rgba(255, 107, 139, 0.6)
+                - box-shadow: 0 4px 12px rgba(255, 107, 139, 0.3)
+                - margin: 20px auto 0 auto
+              icon:
+                - color: black
+                - width: 26px
+                - height: 26px
+            tap_action:
+              action: navigate
+              navigation_path: alarma
+          - type: custom:button-card
+            theme: Mushroom Shadow
+            name: ''
+            icon: mdi:flash
+            styles:
+              card:
+                - width: 50px
+                - height: 50px
+                - background: >-
+                    linear-gradient(135deg, rgba(255,193,7,0.3),
+                    rgba(255,193,7,0.6))
+                - border-radius: 50%
+                - border: 2px solid rgba(255, 193, 7, 0.6)
+                - box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3)
+                - margin: 20px auto 0 auto
+              icon:
+                - color: black
+                - width: 26px
+                - height: 26px
+            tap_action:
+              action: navigate
+              navigation_path: electricidad
+          - type: custom:button-card
+            theme: Mushroom Shadow
+            name: ''
+            icon: mdi:fish
+            styles:
+              card:
+                - width: 50px
+                - height: 50px
+                - background: >-
+                    linear-gradient(135deg, rgba(33,150,243,0.3),
+                    rgba(33,150,243,0.6))
+                - border-radius: 50%
+                - border: 2px solid rgba(33, 150, 243, 0.6)
+                - box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3)
+                - margin: 20px auto 0 auto
+              icon:
+                - color: black
+                - width: 26px
+                - height: 26px
+            tap_action:
+              action: navigate
+              navigation_path: acuario
+          - type: custom:button-card
+            theme: Mushroom Shadow
+            name: ''
+            icon: mdi:radiator
+            styles:
+              card:
+                - width: 50px
+                - height: 50px
+                - background: >-
+                    linear-gradient(135deg, rgba(255,152,0,0.3),
+                    rgba(255,152,0,0.6))
+                - border-radius: 50%
+                - border: 2px solid rgba(255, 152, 0, 0.6)
+                - box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3)
+                - margin: 20px auto 0 auto
+              icon:
+                - color: black
+                - width: 26px
+                - height: 26px
+            tap_action:
+              action: navigate
+              navigation_path: calefaccion
+          - type: custom:button-card
+            theme: Mushroom Shadow
+            name: ''
+            icon: mdi:plus-circle
+            styles:
+              card:
+                - width: 50px
+                - height: 50px
+                - background: >-
+                    linear-gradient(135deg, rgba(76,175,80,0.3),
+                    rgba(76,175,80,0.6))
+                - border-radius: 50%
+                - border: 2px solid rgba(76, 175, 80, 0.6)
+                - box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3)
+                - margin: 20px auto 0 auto
+              icon:
+                - color: black
+                - width: 24px
+                - height: 24px
+            tap_action:
+              action: navigate
+              navigation_path: añadir-dispositivo
+    badges:
+      - type: entity
+        show_name: false
+        show_state: true
+        show_icon: true
+        color: purple
+        show_entity_picture: false
+        name:
+          type: floor
+        entity: person.erica
+  - type: sections
+    max_columns: 4
+    title: Acuario
+    path: acuario
+    icon: mdi:fishbowl
+    theme: Mushroom Shadow
+    sections:
+      - type: grid
+        cards:
+          - type: picture
+            image: /local/acuario.jpg
+            tap_action:
+              action: none
+            style:
+              border-radius: 20px
+              box-shadow: 0 4px 12px rgba(0,0,0,0.3)
+              height: 200px
+              object-fit: cover
+      - type: grid
+        cards:
+          - type: custom:button-card
+            theme: Mushroom Shadow
+            name: 🐠 Acuario
+            styles:
+              card:
+                - background: >-
+                    linear-gradient(135deg, rgba(33,150,243,0.3),
+                    rgba(33,150,243,0.6))
+                - border-radius: 16px
+                - padding: 18px
+                - border: none
+                - box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3)
+              name:
+                - color: white
+                - font-size: 1.4em
+                - font-weight: 700
+                - text-align: center
+      - type: grid
+        cards:
+          - type: heading
+            heading: Valores actuales
+          - type: entities
+            entities:
+              - entity: input_number.temp_acuario
+                name: Temperatura
+              - entity: input_number.ph_acuario
+                name: pH
+              - entity: input_number.no2_acuario
+                name: Nitritos (NO2)
+              - entity: input_number.no3_acuario
+                name: Nitratos (NO3)
+              - entity: input_number.nh3_acuario
+                name: Amoniaco (NH3)
+            state_color: true
+      - type: grid
+        cards:
+          - type: heading
+            heading: Históricos
+          - type: custom:apexcharts-card
+            header:
+              title: Históricos del Acuario
+              show: true
+              show_states: false
+              colorize_states: true
+            graph_span: 3d
+            apex_config:
+              chart:
+                height: 320
+                toolbar:
+                  show: true
+                  tools:
+                    zoom: true
+                    zoomin: true
+                    zoomout: true
+                    pan: true
+                    reset: true
+              stroke:
+                width: 3
+                curve: smooth
+              fill:
+                type: gradient
+                gradient:
+                  shade: light
+                  type: vertical
+                  opacityFrom: 0.35
+                  opacityTo: 0.05
+              tooltip:
+                shared: true
+                intersect: false
+              legend:
+                show: true
+                position: bottom
+                fontSize: 14px
+                markers:
+                  width: 12
+                  height: 12
+            series:
+              - entity: input_number.temp_acuario
+                name: Temperatura
+                color: '#FF6B8B'
+                type: area
+              - entity: input_number.ph_acuario
+                name: pH
+                color: '#5B86E5'
+                type: area
+              - entity: input_number.no2_acuario
+                name: NO2
+                color: '#F44336'
+                type: area
+              - entity: input_number.no3_acuario
+                name: NO3
+                color: '#FF9800'
+                type: area
+              - entity: input_number.nh3_acuario
+                name: NH3
+                color: '#4CAF50'
+                type: area
+    header:
+      card:
+        type: markdown
+        text_only: true
+        content: >
+          🌊 Bienvenida al panel de control de tu acuario, {{ user }}
+
+          💡 Consejo: mantén los nitritos por debajo de 0.5 mg/L y el pH entre
+          6.8 y 7.5 para un entorno estable.
+
+          Tu acuario está en buenas manos 🐠✨
+    badges:
+      - type: entity
+        show_name: false
+        show_state: true
+        show_icon: true
+        entity: input_number.nh3_acuario
+        color: red
+        icon: mdi:abjad-arabic
+      - type: entity
+        show_name: false
+        show_state: true
+        show_icon: true
+        entity: input_number.temp_acuario
